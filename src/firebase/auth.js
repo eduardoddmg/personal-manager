@@ -6,6 +6,7 @@ import {
 } from "firebase/auth";
 import { auth } from "./config";
 import { message } from "@/utils";
+import { create } from "./crud";
 
 export const signUp = async (email, password, username) => {
   try {
@@ -17,6 +18,13 @@ export const signUp = async (email, password, username) => {
     const user = userCredential.user;
 
     await updateProfile(user, { displayName: username });
+    create("users", {
+      idUser: user.uid,
+      name: username,
+      address: null,
+      age: null,
+      imgUrl: null
+    });
 
     console.log("Usuário registrado com sucesso:", user.uid);
 
@@ -66,16 +74,18 @@ export const login = async (email, password) => {
 export const forgotPassword = async (email) => {
   try {
     await sendPasswordResetEmail(auth, email);
-    return { success: true, status: 'success', message: "Mensagem enviada para seu email"}
-
+    return {
+      success: true,
+      status: "success",
+      message: "Mensagem enviada para seu email",
+    };
   } catch (error) {
     const errorCode = error.code;
 
     return {
       success: false,
       message: message.error[errorCode],
-      status: "error"
-    }
+      status: "error",
+    };
   }
-}
-
+};

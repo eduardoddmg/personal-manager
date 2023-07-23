@@ -57,12 +57,12 @@ const Login = () => {
             Login
           </Chakra.Button>
         </form>
-        <Chakra.Text textAlign="center">
+        <Chakra.Text textAlign="center" pt={3}>
           Esqueceu a sua senha?{" "}
           <ButtonLink variant="link" href="/forgot-password" color="blue.500"> Clique aqui </ButtonLink>
         </Chakra.Text>
-        <Chakra.Divider pt={3} />
-        <Chakra.Text textAlign="center" pt={3}>
+        <Chakra.Divider pt={5} />
+        <Chakra.Text textAlign="center" pt={5}>
           Ainda não tem uma conta?{" "}
           <ButtonLink variant="link" href="/register" color="blue.500"> Crie sua conta </ButtonLink>
         </Chakra.Text>

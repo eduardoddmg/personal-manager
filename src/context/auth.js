@@ -4,12 +4,15 @@ export const AuthContext = createContext({});
 
 import { login as loginFirebase } from "@/firebase";
 import { useToast } from "@chakra-ui/react";
+import { useRouter } from "next/router";
 
 export const AuthProvider = ({ children }) => {
   const [username, setUsername] = useState("");
   const [token, setToken] = useState("");
 
   const toast = useToast();
+
+  const router = useRouter();
 
   const login = async (username, password) => {
     const result = await loginFirebase(username, password);
@@ -21,6 +24,7 @@ export const AuthProvider = ({ children }) => {
     if (result.success) {
       setUsername(result.username);
       setToken(result.token);
+      router.push("/");
     }
   };
 
