@@ -20,7 +20,7 @@ const Home = () => {
       <Chakra.Text fontSize="lg" textAlign="center">
         Aqui você pode gerenciar facilmente todos os seus contatos.
       </Chakra.Text>
-      <Chakra.Wrap w="full" spacing={5} my={10}>
+      <Chakra.Wrap w="full" spacing={5} my={10} justify={["center", "center", "start"]}>
         <Card
           href="/contacts"
           title="Contatos"

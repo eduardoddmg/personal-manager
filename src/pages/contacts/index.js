@@ -36,7 +36,7 @@ const Dashboard = () => {
 
   const edit = (data) => {
     router.push(
-      `/contacts/form?id=${data.id}&name=${data.name}&email=${data.email}&type=${data.type}`
+      `/contacts/form?id=${data.id}`
     );
   };
 

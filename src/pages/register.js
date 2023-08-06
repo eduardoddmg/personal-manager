@@ -38,8 +38,7 @@ const Register = () => {
         p={8}
         rounded="md"
         shadow="md"
-        maxWidth="400px"
-        width="100%"
+        w={["100%", "80%", "50%"]}
       >
         <Heading as="h2" textAlign="center" mb={6}>
           Registro
@@ -75,9 +74,9 @@ const Register = () => {
         </form>
         <Chakra.Text textAlign="center">
           Entre na sua conta?{" "}
-          <ButtonLink variant="link" href="/login" color="black">
+          <ButtonLink variant="link" href="/login" color="blue.500">
             {" "}
-            Crie sua conta{" "}
+            Entre na sua conta{" "}
           </ButtonLink>
         </Chakra.Text>
       </Box>

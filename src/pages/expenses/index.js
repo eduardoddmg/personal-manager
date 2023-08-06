@@ -80,11 +80,11 @@ const Expenses = () => {
 
   return (
     <Chakra.Stack p={5}>
-      <Chakra.HStack spacing={3}>
+      <Chakra.Wrap spacing={3}>
         <CardMoney title="Total" value={loading ? 0 : total()} color="gray" />
         <CardMoney title="Entrada" value={loading ? 0 : totalInput()} color="green" />
         <CardMoney title="Saída" value={loading ? 0 : totalExpense()} color="red" />
-      </Chakra.HStack>
+      </Chakra.Wrap>
       <Chakra.HStack>
         <ButtonLink colorScheme="green" alignSelf="start" href="/expenses/form">
           Criar

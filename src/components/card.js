@@ -6,7 +6,7 @@ export const Card = ({ href, title, subtitle, icon, bg, ...rest }) => {
   const router = useRouter();
   return (
     <Chakra.VStack
-      w="30%"
+      w={["100%", "80%", "30%"]}
       cursor="pointer"
       onClick={() => router.push(href)}
       borderRadius={5}
@@ -31,7 +31,7 @@ export const CardMoney = ({ title, value, color }) => {
   });
 
   return (
-    <Chakra.Card p={6} w="30%" textAlign="center">
+    <Chakra.Card p={6} w={["100%", "80%", "30%"]} textAlign="center">
       <Chakra.Stat>
         <Chakra.StatLabel>
           <Chakra.Badge colorScheme={color || "white"}>{title}</Chakra.Badge>

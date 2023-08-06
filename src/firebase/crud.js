@@ -9,6 +9,7 @@ import {
   deleteDoc,
   updateDoc,
   serverTimestamp,
+  getDoc,
 } from "firebase/firestore";
 
 export const readAll = async (collectionName) => {
@@ -24,11 +25,15 @@ export const readAll = async (collectionName) => {
 };
 
 export const readOne = async (collectionName, documentId) => {
+
+  console.log(collectionName, documentId);
+
   const documentRef = doc(db, collectionName, documentId);
   const docSnapshot = await getDoc(documentRef);
   if (docSnapshot.exists()) {
     const data = docSnapshot.data();
     console.log(data);
+    return data;
   } else {
     console.log("Documento não encontrado!");
   }

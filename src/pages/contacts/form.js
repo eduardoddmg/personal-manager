@@ -1,7 +1,7 @@
 import { Box, Button, Flex, Heading, Link, Stack } from "@chakra-ui/react";
 import { useForm } from "react-hook-form";
 import { Input, InputNumber, Select } from "@/components";
-import { create, signUp, update } from "@/firebase";
+import { create, readOne, signUp, update } from "@/firebase";
 import { WithAuth } from "@/hooks";
 import { useAuth } from "@/context";
 import { useRouter } from "next/router";
@@ -28,10 +28,17 @@ const FormContact = () => {
       .then(() => router.push("/contacts"));
   };
 
+
+  const fetchData = async () => {
+    const result = await readOne("contacts", router.query.id);
+
+    setValue("name", result.name);
+    setValue("email", result.email);
+    setValue("type", result.type);
+  }
+
   useEffect(() => {
-    setValue("name", router.query.name);
-    setValue("email", router.query.email);
-    setValue("type", router.query.type);
+    if (router.query.id) fetchData();
   }, []);
 
   return (
@@ -45,14 +52,14 @@ const FormContact = () => {
           type="email"
           errors={errors?.email}
           {...register("email")}
-          defaultValue="email@email.com"
+          defaultValue=""
         />
         <Input
           title="Nome"
           type="text"
           errors={errors?.name}
           {...register("name")}
-          defaultValue="teste"
+          defaultValue=""
         />
         <InputNumber
           title="Idade"

@@ -6,6 +6,7 @@ import { useAuth } from "@/context";
 import { WithoutAuth } from "@/hooks";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as schema from "@/schema";
+import { useState } from "react";
 
 const Login = () => {
   const {
@@ -16,7 +17,11 @@ const Login = () => {
 
   const auth = useAuth();
 
+  const [loading, setLoading] = useState(false);
+
   const onSubmit = async (data) => {
+    setLoading(true);
+    
     console.log(data);
     auth.login(data.email, data.password);
   };
@@ -28,7 +33,7 @@ const Login = () => {
         p={8}
         rounded="md"
         shadow="md"
-        maxWidth="400px"
+        w={["100%", "80%", "50%"]}
         width="100%"
       >
         <Chakra.Heading as="h2" textAlign="center" mb={6}>
@@ -53,6 +58,7 @@ const Login = () => {
             width="100%"
             mb={4}
             type="submit"
+            isLoading={loading}
           >
             Login
           </Chakra.Button>
