@@ -5,3 +5,4 @@ export * from "./card";
 export * from "./table";
 export * from "./search";
 export * from './loading';
+export * from './head';

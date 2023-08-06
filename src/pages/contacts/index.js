@@ -1,4 +1,4 @@
-import { ButtonLink, Table, SearchBar, CardValue } from "@/components";
+import { ButtonLink, Table, SearchBar, CardValue, HeadComp } from "@/components";
 import { readAll, remove as removeDoc, update } from "@/firebase";
 import { WithAuth } from "@/hooks";
 import React, { useEffect, useState } from "react";
@@ -48,6 +48,7 @@ const Dashboard = () => {
 
   return (
     <Chakra.Stack p={5}>
+      <HeadComp title="Contatos" />
       <Chakra.Wrap spacing={3}>
         <CardValue
           title="Total"

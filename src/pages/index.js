@@ -1,4 +1,4 @@
-import { Card } from "@/components";
+import { Card, HeadComp } from "@/components";
 import { useAuth } from "@/context";
 import { WithAuth, WithoutAuth } from "@/hooks";
 import * as Chakra from "@chakra-ui/react";
@@ -14,6 +14,7 @@ const Home = () => {
 
   return (
     <Chakra.Flex p={10} direction="column" align="center" justify="center">
+      <HeadComp title="Sistema faz-tudo" />
       <Chakra.Heading as="h1" size="xl" textAlign="center" mb={3}>
         Bem-vindo {auth.username} ao Sistema Faz-Tudo
       </Chakra.Heading>

@@ -3,12 +3,18 @@ import { readAll, readOne } from "@/firebase";
 import { useAuth } from "@/context";
 import { WithAuth } from "@/hooks";
 import * as Chakra from "@chakra-ui/react";
-import { ButtonLink, Loading } from "@/components";
+import { ButtonLink, HeadComp, Loading } from "@/components";
 
 const Card = ({ heading, text }) => {
   return (
     <Chakra.Wrap w={["100%", "80%"]} py={2} spacing={0}>
-      <Chakra.Text fontWeight="bold" py={5} px={3} w={["100%", "50%"]} bg="gray.200">
+      <Chakra.Text
+        fontWeight="bold"
+        py={5}
+        px={3}
+        w={["100%", "50%"]}
+        bg="gray.200"
+      >
         {heading}
       </Chakra.Text>
       <Chakra.Text py={5} px={3} w={["100%", "50%"]} bg="gray.100">
@@ -38,10 +44,17 @@ const Personal = () => {
 
   console.log(loading);
 
-  if (loading) return <Loading />;
+  if (loading)
+    return (
+      <>
+      <HeadComp title="Carregando..." />
+        <Loading />;
+      </>
+    );
   if (!loading)
     return (
       <Chakra.Stack p={5}>
+      <HeadComp title="Dados pessoais" />
         <Chakra.Image
           boxSize="200px"
           borderRadius="100%"

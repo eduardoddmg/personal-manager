@@ -1,6 +1,6 @@
 import * as Chakra from "@chakra-ui/react";
 import { useForm } from "react-hook-form";
-import { ButtonLink, Input } from "@/components";
+import { ButtonLink, HeadComp, Input } from "@/components";
 import { login } from "@/firebase";
 import { useAuth } from "@/context";
 import { WithoutAuth } from "@/hooks";
@@ -28,6 +28,8 @@ const Login = () => {
 
   return (
     <Chakra.Flex py={20} align="center" justify="center">
+    <HeadComp title="Login" description="Faça login no nosso sistema" />
+
       <Chakra.Box
         bg="white"
         p={8}

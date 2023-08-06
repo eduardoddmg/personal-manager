@@ -1,6 +1,6 @@
 import { Box, Button, Flex, Heading, Link, Stack } from "@chakra-ui/react";
 import { useForm } from "react-hook-form";
-import { Input, InputNumber, InputNumberMoney, Select } from "@/components";
+import { HeadComp, Input, InputNumber, InputNumberMoney, Select } from "@/components";
 import { create, signUp, update } from "@/firebase";
 import { WithAuth } from "@/hooks";
 import { useAuth } from "@/context";
@@ -48,6 +48,7 @@ const FormExpenses = () => {
 
   return (
     <Stack p={[2,20]} w="50%" mx="auto">
+      <HeadComp title="Economias" />
       <Heading as="h2" textAlign="center" mb={6}>
         Registro
       </Heading>

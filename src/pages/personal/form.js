@@ -8,7 +8,7 @@ import {
   Image,
 } from "@chakra-ui/react";
 import { useForm } from "react-hook-form";
-import { Input, InputNumber, Select } from "@/components";
+import { HeadComp, Input, InputNumber, Select } from "@/components";
 import { create, signUp, storage, update, uploadImage } from "@/firebase";
 import { WithAuth } from "@/hooks";
 import { useAuth } from "@/context";
@@ -74,6 +74,7 @@ const FormPersonal = () => {
 
   return (
     <Stack p={[2,20]}>
+      <HeadComp title="Dados pessoais" />
       <Heading as="h2" textAlign="center" mb={6}>
         Registro
       </Heading>

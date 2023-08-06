@@ -1,7 +1,7 @@
 import { Box, Button, Flex, Heading, Link } from "@chakra-ui/react";
 import * as Chakra from "@chakra-ui/react";
 import { useForm } from "react-hook-form";
-import { ButtonLink, Input } from "@/components";
+import { ButtonLink, HeadComp, Input } from "@/components";
 import { signUp } from "@/firebase";
 import { WithoutAuth } from "@/hooks";
 import { useRouter } from "next/router";
@@ -33,6 +33,7 @@ const Register = () => {
 
   return (
     <Flex py={20} align="center" justify="center">
+      <HeadComp title="Registro" />
       <Box
         bg="white"
         p={8}

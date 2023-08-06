@@ -1,9 +1,11 @@
+import { HeadComp } from "@/components";
 import { WithAuth } from "@/hooks";
 import * as Chakra from "@chakra-ui/react";
 
 export const About = () => {
   return (
     <Chakra.Stack p={10}>
+      <HeadComp title="Sobre" />
       <Chakra.Heading as="h1" mb={4} fontSize="2xl" textAlign="center">
         Sobre o Nosso Sistema Incrível
       </Chakra.Heading>

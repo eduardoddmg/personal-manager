@@ -1,4 +1,4 @@
-import { ButtonLink, Table, SearchBar, CardMoney } from "@/components";
+import { ButtonLink, Table, SearchBar, CardMoney, HeadComp } from "@/components";
 import { readAll, remove as removeDoc, update } from "@/firebase";
 import { WithAuth } from "@/hooks";
 import React, { useEffect, useState } from "react";
@@ -80,6 +80,7 @@ const Expenses = () => {
 
   return (
     <Chakra.Stack p={5}>
+      <HeadComp title="Economias" />
       <Chakra.Wrap spacing={3} justify="start">
         <CardMoney title="Total" value={loading ? 0 : total()} color="gray" />
         <CardMoney title="Entrada" value={loading ? 0 : totalInput()} color="green" />
