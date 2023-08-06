@@ -8,8 +8,9 @@ export const WithAuth = (WrappedComponent) => {
     const { token } = useAuth();
 
     useEffect(() => {
+      console.log(router.asPath);
       if (!token) {
-        router.replace('/login');
+        router.replace(`/login?redirect=${router.asPath}`);
       }
     }, [token, router]);
 

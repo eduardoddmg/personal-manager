@@ -75,7 +75,7 @@ const Register = () => {
         </form>
         <Chakra.Text textAlign="center">
           Entre na sua conta?{" "}
-          <ButtonLink variant="link" href="/login" color="blue.500">
+          <ButtonLink variant="link" href={`/login?redirect=${router.query.redirect}`} color="blue.500">
             {" "}
             Entre na sua conta{" "}
           </ButtonLink>

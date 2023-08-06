@@ -1,4 +1,4 @@
-import { Navbar } from "@/components";
+import { Navbar, Navigation } from "@/components";
 import { ContextProvider } from "@/context";
 import { ChakraProvider } from "@chakra-ui/react";
 

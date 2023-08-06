@@ -15,3 +15,18 @@ export const ButtonLink = ({ href, children, ...rest }) => {
     </Button>
   );
 };
+
+export const ButtonLinkBack = ({ children, ...rest }) => {
+  const router = useRouter();
+
+  const handleClick = (event) => {
+    event.preventDefault();
+    router.back();
+  };
+
+  return (
+    <Button onClick={handleClick} {...rest} fontWeight="normal">
+      {children}
+    </Button>
+  );
+};

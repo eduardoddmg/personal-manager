@@ -17,9 +17,10 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 import { HamburgerIcon } from "@chakra-ui/icons";
-import { ButtonLink } from "./btn-link";
+import { ButtonLink, ButtonLinkBack } from "./btn-link";
 import { useAuth } from "@/context";
 import { AiFillHome } from "react-icons/ai";
+import { IoArrowBackOutline } from "react-icons/io";
 import { FiLogOut } from "react-icons/fi";
 
 export const Navbar = () => {

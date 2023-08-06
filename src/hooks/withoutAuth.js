@@ -9,7 +9,7 @@ export const WithoutAuth = (WrappedComponent) => {
 
     useEffect(() => {
       if (token) {
-        router.replace('/');
+        router.replace(router.query.redirect || "/");
       }
     }, [token, router]);
 

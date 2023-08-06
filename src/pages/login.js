@@ -7,6 +7,7 @@ import { WithoutAuth } from "@/hooks";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as schema from "@/schema";
 import { useState } from "react";
+import { useRouter } from "next/router";
 
 const Login = () => {
   const {
@@ -16,6 +17,7 @@ const Login = () => {
   } = useForm({ resolver: yupResolver(schema.login)});
 
   const auth = useAuth();
+  const router = useRouter();
 
   const [loading, setLoading] = useState(false);
 
@@ -72,7 +74,7 @@ const Login = () => {
         <Chakra.Divider pt={5} />
         <Chakra.Text textAlign="center" pt={5}>
           Ainda não tem uma conta?{" "}
-          <ButtonLink variant="link" href="/register" color="blue.500"> Crie sua conta </ButtonLink>
+          <ButtonLink variant="link" href={`/register?redirect=${router.query.redirect}`} color="blue.500"> Crie sua conta </ButtonLink>
         </Chakra.Text>
       </Chakra.Box>
     </Chakra.Flex>

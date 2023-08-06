@@ -1,4 +1,4 @@
-import { ButtonLink, Table, SearchBar, CardValue, HeadComp } from "@/components";
+import { ButtonLink, Table, SearchBar, CardValue, HeadComp, Navigation } from "@/components";
 import { readAll, remove as removeDoc, update } from "@/firebase";
 import { WithAuth } from "@/hooks";
 import React, { useEffect, useState } from "react";

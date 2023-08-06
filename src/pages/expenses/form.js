@@ -1,6 +1,6 @@
 import { Box, Button, Flex, Heading, Link, Stack } from "@chakra-ui/react";
 import { useForm } from "react-hook-form";
-import { HeadComp, Input, InputNumber, InputNumberMoney, Select } from "@/components";
+import { HeadComp, Input, InputNumber, InputNumberMoney, Navigation, Select } from "@/components";
 import { create, signUp, update } from "@/firebase";
 import { WithAuth } from "@/hooks";
 import { useAuth } from "@/context";

@@ -1,6 +1,6 @@
 import { Box, Button, Flex, Heading, Link, Stack } from "@chakra-ui/react";
 import { useForm } from "react-hook-form";
-import { HeadComp, Input, InputNumber, Select } from "@/components";
+import { HeadComp, Input, InputNumber, Navigation, Select } from "@/components";
 import { create, readOne, signUp, update } from "@/firebase";
 import { WithAuth } from "@/hooks";
 import { useAuth } from "@/context";
@@ -42,12 +42,12 @@ const FormContact = () => {
   }, []);
 
   return (
-    <Stack p={[2,20]}>
+    <Stack py={[2,10]}>
       <HeadComp title="Contato" />
       <Heading as="h2" textAlign="center" mb={6}>
         Registro
       </Heading>
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <Stack px={8} onSubmit={handleSubmit(onSubmit)} as="form">
         <Input
           title="Email"
           type="email"
@@ -75,7 +75,7 @@ const FormContact = () => {
         <Button colorScheme="blue" size="lg" width="100%" mb={4} type="submit">
           Registro
         </Button>
-      </form>
+      </Stack>
     </Stack>
   );
 };
