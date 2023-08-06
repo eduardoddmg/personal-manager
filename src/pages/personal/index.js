@@ -7,14 +7,14 @@ import { ButtonLink, Loading } from "@/components";
 
 const Card = ({ heading, text }) => {
   return (
-    <Chakra.HStack w="80%" py={2} spacing={0}>
-      <Chakra.Text fontWeight="bold" py={5} px={3} w="50%" bg="gray.200">
+    <Chakra.Wrap w={["100%", "80%"]} py={2} spacing={0}>
+      <Chakra.Text fontWeight="bold" py={5} px={3} w={["100%", "50%"]} bg="gray.200">
         {heading}
       </Chakra.Text>
-      <Chakra.Text py={5} px={3} w="50%" bg="gray.100">
+      <Chakra.Text py={5} px={3} w={["100%", "50%"]} bg="gray.100">
         {text || "Não registrado"}
       </Chakra.Text>
-    </Chakra.HStack>
+    </Chakra.Wrap>
   );
 };
 

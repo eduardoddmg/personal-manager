@@ -48,7 +48,7 @@ const Dashboard = () => {
 
   return (
     <Chakra.Stack p={5}>
-      <Chakra.HStack spacing={3}>
+      <Chakra.Wrap spacing={3}>
         <CardValue
           title="Total"
           value={loading ? 0 : contacts?.length}
@@ -72,9 +72,9 @@ const Dashboard = () => {
           }
           color="red"
         />
-      </Chakra.HStack>
+      </Chakra.Wrap>
       <Chakra.HStack>
-        <ButtonLink colorScheme="green" alignSelf="start" href="/contacts/form">
+        <ButtonLink w="80%" colorScheme="green" alignSelf="start" href="/contacts/form">
           Criar
         </ButtonLink>
         <Chakra.Button onClick={fetchData}>

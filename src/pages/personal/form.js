@@ -73,7 +73,7 @@ const FormPersonal = () => {
   }
 
   return (
-    <Stack p={20}>
+    <Stack p={[2,20]}>
       <Heading as="h2" textAlign="center" mb={6}>
         Registro
       </Heading>

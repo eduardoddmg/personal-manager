@@ -31,7 +31,7 @@ export const CardMoney = ({ title, value, color }) => {
   });
 
   return (
-    <Chakra.Card p={6} w={["100%", "80%", "30%"]} textAlign="center">
+    <Chakra.Card p={6} w={["100%", "100%", "30%"]} textAlign="center">
       <Chakra.Stat>
         <Chakra.StatLabel>
           <Chakra.Badge colorScheme={color || "white"}>{title}</Chakra.Badge>
@@ -55,7 +55,7 @@ export const CardValue = ({ title, value, color }) => {
   });
 
   return (
-    <Chakra.Card p={6} w="30%" textAlign="center">
+    <Chakra.Card p={6} w={["100%", "100%", "30%"]} textAlign="center">
       <Chakra.Stat>
         <Chakra.StatLabel>
           <Chakra.Badge colorScheme={color || "white"}>{title}</Chakra.Badge>

@@ -9,6 +9,13 @@ export const Table = ({ loading, data, children, ...rest }) => {
         <Chakra.Heading>Não há nenhum item cadastrado</Chakra.Heading>
       </Chakra.Center>
     );
-  if (!loading) return <Chakra.Table {...rest}>{children}</Chakra.Table>;
+  if (!loading)
+    return (
+      <Chakra.TableContainer>
+        <Chakra.Table overflow="scroll" {...rest}>
+          {children}
+        </Chakra.Table>
+      </Chakra.TableContainer>
+    );
   else return <Loading />;
 };

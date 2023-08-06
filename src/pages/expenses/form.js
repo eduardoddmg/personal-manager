@@ -47,7 +47,7 @@ const FormExpenses = () => {
   }, []);
 
   return (
-    <Stack p={20} w="50%" mx="auto">
+    <Stack p={[2,20]} w="50%" mx="auto">
       <Heading as="h2" textAlign="center" mb={6}>
         Registro
       </Heading>

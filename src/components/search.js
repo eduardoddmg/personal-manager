@@ -21,7 +21,7 @@ export const SearchBar = ({ data, setData, collection, field }) => {
           type="text"
           placeholder="Pesquisar..."
           size="md"
-          w="50%"
+          w={["full", "full", "50%"]}
           borderRadius="full"
           borderColor="gray.300"
           _focus={{ borderColor: "blue.400", boxShadow: "outline" }}

@@ -80,13 +80,13 @@ const Expenses = () => {
 
   return (
     <Chakra.Stack p={5}>
-      <Chakra.Wrap spacing={3}>
+      <Chakra.Wrap spacing={3} justify="start">
         <CardMoney title="Total" value={loading ? 0 : total()} color="gray" />
         <CardMoney title="Entrada" value={loading ? 0 : totalInput()} color="green" />
         <CardMoney title="Saída" value={loading ? 0 : totalExpense()} color="red" />
       </Chakra.Wrap>
       <Chakra.HStack>
-        <ButtonLink colorScheme="green" alignSelf="start" href="/expenses/form">
+        <ButtonLink w="80%" colorScheme="green" alignSelf={["stretch", "start"]} href="/expenses/form">
           Criar
         </ButtonLink>
         <Chakra.Button onClick={fetchData}>
@@ -143,7 +143,7 @@ const Expenses = () => {
                     </Chakra.Button>
                   </Chakra.Td>
                 </Chakra.Tr>
-              );
+              )
             })}
         </Chakra.Tbody>
       </Table>
